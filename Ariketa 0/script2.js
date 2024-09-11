@@ -1,0 +1,1 @@
+document.getElementById('encabezado-principal').innerHTML = "HTML Masters";
