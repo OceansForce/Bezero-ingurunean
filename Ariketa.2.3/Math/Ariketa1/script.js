@@ -5,7 +5,7 @@ function menua(aukera){
         case 0:
             let zenb1= prompt("Oinarria");
             let zenb2= prompt("Berritzailea");
-            document.write(Math.pow(zenb1, zenb2));
+            document.getElementById().innerHTML= Math.pow(zenb1, zenb2);
             break;
 
         case 1:
