@@ -4,7 +4,8 @@ function data(){
     let hilabetea= prompt("Ze hilabetetan");
     let eguna= prompt("Ze egunetan");
     urtebetetzea = new Date(urtea, hilabetea-1, eguna);
-   
+    
+    console.log(urtebetetzea);
     let bat= urtebetetzea.toISOString().split("T");
     
     document.write("<h1>"+bat[0]+"</h1>");
