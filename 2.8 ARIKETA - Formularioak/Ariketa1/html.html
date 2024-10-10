@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="">Izen Abizena</label>
+        <input type="text" required id="Izen_abizen" >
+        <br>
+        <label for="">Email</label>
+        <input type="email" required id="email" >
+        <br>
+        <button onclick="egiastatu()">Egiastatu</button>
+    </form>
+    <script>
+        function egiastatu(){
+            let izen_abizen= document.getElementById("Izen_abizen").value;
+            let email= document.getElementById("email").value;
+
+            if (izen_abizen.trim !=="" && email.trim!==""){
+                alert(izen_abizen+"  "+email);
+            }else{
+                alert("Bete");
+            }
+               
+
+        }
+        
+    </script>
+</body>
+</html>

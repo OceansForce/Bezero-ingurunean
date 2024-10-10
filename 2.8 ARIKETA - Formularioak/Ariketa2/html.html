@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    .linea{
+        height:100px; 
+        width:100px; 
+        background:rgb(150, 150, 150);
+        display:inline-block;
+    }
+    </style>
+<body>
+    <form>
+        <select onchange="kaxak()" name="Kaxak" id="kaxa">
+            <option value="kaxa1">kaxa1</option>
+            <option value="kaxa2">kaxa2</option>
+            <option value="kaxa3">kaxa3</option>
+            <option value="kaxa4">kaxa4</option>
+        </select>
+        <select  onchange="koloreak()" name="kolorea" id="kolorea" >
+            <option value="blue">urdina</option>
+            <option value="red">gorria</option>
+            <option value="green">berdea</option>
+            <option value="yellow">horia</option>
+        </select>
+
+    </form>
+    <br>
+    <div class="linea" id="kaxa1"></div>
+    <div class="linea" id="kaxa2"></div>
+    <div class="linea" id="kaxa3"></div>
+    <div class="linea" id="kaxa4"></div>
+    
+    <script>
+        var kaxa="kaxa1";
+        var kolorea="blue"
+        function kaxak(){
+            kaxa= document.getElementById("kaxa").value;
+            document.getElementById(kaxa).style.backgroundColor=kolorea;
+        }
+
+        function koloreak(){
+            kolorea= document.getElementById("kolorea").value;
+            document.getElementById(kaxa).style.backgroundColor=kolorea;
+        }
+        
+    </script>
+</body>
+</html>
