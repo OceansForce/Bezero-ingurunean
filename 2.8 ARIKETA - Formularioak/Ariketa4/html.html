@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .error {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <form id="formulario">
+        <div>
+            <label for="Izena">Izena</label>
+            <input type="text" id="izena" onkeydown="urrengoa(event, 'abizena')" oninput="balidatu(this)"><br><br>
+            <label for="Abizena">Abizena</label>
+            <input type="text" id="abizena" onkeydown="urrengoa(event, 'helbidea')" oninput="balidatu(this)"><br><br>
+            <label for="">Helbidea</label>
+            <input type="text" id="helbidea" onkeydown="urrengoa(event,'herria')" oninput="balidatu(this)"><br><br>
+            <button type="button" onclick="ezabatu()">Ezabatu</button>
+        </div>
+        
+        <div>
+            <label for="">Herria</label>
+            <input type="text" id="herria" onkeydown="urrengoa(event,'postakodea')" oninput="balidatu(this)"><br><br>
+            <label for="">Postakodea</label>
+            <input type="tel" id="postakodea" onkeydown="urrengoa(event,'probintzia')" maxlength="4" oninput="balidatu(this)"><br><br>
+            <label for="">Probintzia</label>
+            <input type="text" id="probintzia" onkeydown="urrengoa(event,'sartu')" oninput="balidatu(this)"><br><br>
+            <button type="button" id="sartuuu" onclick="sartu()">Sartu</button>
+        </div>
+    </form>
+
+    <script>
+       
+        window.onload = function() {
+            document.getElementById("izena").focus();
+        }
+
+        function urrengoa(event, urrengoIDa) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById(urrengoIDa).focus();
+            }
+        }
+
+        
+        function ezabatu() {
+            document.querySelectorAll("input").forEach(input => {
+                input.value = ""; 
+                input.classList.remove("error"); 
+            });
+        }
+
+        function balidatu(input) {
+            if (input.value.trim() === "") {
+                input.classList.add("error"); 
+            } else {
+                input.classList.remove("error");
+            }
+        }
+
+        function sartu() {
+            let ize = document.getElementById("izena");
+            let abiz = document.getElementById("abizena");
+            let helb = document.getElementById("helbidea");
+            let herri = document.getElementById("herria");
+            let post = document.getElementById("postakodea");
+            let prob = document.getElementById("probintzia");
+
+    
+            let inputs = [ize, abiz, helb, herri, post, prob];
+
+           
+            inputs.forEach(input => {
+                if (input.value.trim() === "") {
+                    input.classList.add("error"); 
+                    formularioValido = false; 
+                }
+            });
+        }
+    </script>
+</body>
+</html>
