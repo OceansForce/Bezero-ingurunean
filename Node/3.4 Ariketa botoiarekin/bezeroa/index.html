@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <p id="nereKonexioa"></p>
+    <input type="text" id="izena">
+    <button onclick="izena_jarri()">Sartu</button>
+    <script>
+
+        function izena_jarri(){
+            var socket = io();
+            var izena= document.getElementById("izena").value;
+            socket.emit('Izena', izena);
+            socket.on('ID', function(i){
+
+                document.getElementById("nereKonexioa").innerHTML  = i+"-"+izena;
+            })
+            
+        }
+
+    </script> 
+</body>
+</html>

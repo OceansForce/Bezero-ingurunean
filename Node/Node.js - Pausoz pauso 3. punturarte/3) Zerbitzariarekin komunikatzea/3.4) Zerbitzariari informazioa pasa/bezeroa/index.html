@@ -1,0 +1,16 @@
+<script src="/socket.io/socket.io.js"></script>
+<p id="nereKonexioa"> </p>
+</button>
+
+<script>
+
+    var socket = io();
+
+    socket.on('ID',function(data){
+        document.getElementById("nereKonexioa").innerHTML  = data;	
+
+        socket.emit('jasoDet', data + '. erabiltzailea naizela jaso det'); //String bat itzultzen da, baina objektuak, arrayak... itzul daitezke.
+
+        });
+
+</script> 
