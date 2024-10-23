@@ -18,7 +18,23 @@
      <p onclick="borrar()">Y pulsa en el quinto para borrar el 
          recuadro de la derecha.</p> 
     <script>
-        
+
+      var cuadro= document.getElementById("cuadro");
+
+      function acceder(){
+            
+         let p = document.getElementsByTagName("p");
+
+         Array.from(p).forEach(element => {
+            cuadro.innerHTML+=element.textContent+"<br>";
+            
+         });
+      }
+
+      function borrar(){
+         cuadro.innerHTML="";
+         cuadro.style.border = "none";
+      }
     </script>
 </body>
 </html>
