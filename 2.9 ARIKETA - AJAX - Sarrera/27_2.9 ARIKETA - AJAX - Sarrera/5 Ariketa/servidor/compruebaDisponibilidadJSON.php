@@ -1,4 +1,7 @@
 <?php
+
+header('Content-Type: application/json');
+
 $login = $_POST["login"];
 
 srand((double)microtime()*1000000);

@@ -2,18 +2,18 @@
 // Obtener el valor del login que se quiere comprobar
 $login = $_POST["login"];
 
-// Generar un número aleatorio
+// Generar un nï¿½mero aleatorio
 srand((double)microtime()*1000000);
 $numeroAleatorio = rand(0, 10);
 
 // Simular un falso retardo por la red y el servidor (entre 0 y 2 segundos)
 sleep($numeroAleatorio % 2);
 
-// El script devuelve alatoriamente 'si' o 'no' para que la aplicación
+// El script devuelve alatoriamente 'si' o 'no' para que la aplicaciï¿½n
 // cliente pueda comprobar los dos casos
 $disponible = ($numeroAleatorio % 2 == 0)? "si" : "no";
 
-// Si el login comprobado no está disponible, se ofrece una serie de alternativas
+// Si el login comprobado no estï¿½ disponible, se ofrece una serie de alternativas
 if($disponible == "no") {
   $alternativasAutomaticas[] = $login.$login;
   $alternativasAutomaticas[] = "123".$login;

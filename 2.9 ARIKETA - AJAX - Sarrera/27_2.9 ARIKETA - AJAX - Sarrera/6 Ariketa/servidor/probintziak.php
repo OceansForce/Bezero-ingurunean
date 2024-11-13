@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 header("Content-Type: application/xml");
 
 $provincias["01"] = "Álava/Araba";
