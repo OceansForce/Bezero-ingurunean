@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 $provincias["01"] = "Álava/Araba";
 $provincias["02"] = "Albacete";

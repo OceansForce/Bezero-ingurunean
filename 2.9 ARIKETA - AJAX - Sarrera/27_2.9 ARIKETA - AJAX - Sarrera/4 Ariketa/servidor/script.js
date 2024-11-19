@@ -7,11 +7,10 @@ function izena (){
     
     xhr.onreadystatechange=function(){
         if(xhr.readyState===4 && xhr.status===200){
-            
-            console.log(xhr.responseXML);
 
-            let doc_xml= xhr.responseXML;
-            let root= doc_xml.getElementsByTagName("respuesta")[0];
+            let doc= xhr.responseText;
+            let doc_json= JSON.parse(doc);
+            let root= doc_json.getElementsByTagName("respuesta")[0];
             let disponibilidad= root.getElementsByTagName("disponible")[0];
             let mezua= disponibilidad.firstChild.nodeValue;
 

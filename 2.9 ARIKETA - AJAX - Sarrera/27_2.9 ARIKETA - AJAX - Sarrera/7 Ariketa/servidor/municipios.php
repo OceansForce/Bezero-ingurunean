@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 $municipios["01"]["0014"] = "Alegría-Dulantzi";
 $municipios["01"]["0029"] = "Amurrio";

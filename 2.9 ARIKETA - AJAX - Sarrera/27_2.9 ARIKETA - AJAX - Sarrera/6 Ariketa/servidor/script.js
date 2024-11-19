@@ -35,15 +35,18 @@ function municipios(){
 
     xhr.onreadystatechange=function(){
         if (xhr.readyState===4 && xhr.status===200){
+            console.log("dsad");
             let doc_xml= xhr.responseXML;
             let municipios= doc_xml.getElementsByTagName("municipios")[0];
-            let municipio= municipios.getElementsByTagName("municipio");
+            let municipio1= municipios.getElementsByTagName("municipio");
             
-
-            for (let index = 0; index < municipio.length; index++) {
-               let izena= municipio.getElementsByTagName("nombre")[index].firstChild.nodeValue; 
-               let id_2= municipio.getElementsByTagName("codigo")[index].firstChild.nodeValue;
-               document.getElementById("datuak").innerHTML+=`<tr><td>${izena}</td><td>${id_2}</td></tr> `;
+           
+            document.getElementById("datuak").innerHTML="";
+            for (let index = 0; index < municipio1.length; index++) {
+            
+                let izena= municipio1[index].getElementsByTagName("nombre")[0].firstChild.nodeValue; 
+                let id_2= municipio1[index].getElementsByTagName("codigo")[0].firstChild.nodeValue;
+                document.getElementById("datuak").innerHTML+=`<tr><td>${izena}</td><td>${id_2}</td></tr> `;
             }
             
            
